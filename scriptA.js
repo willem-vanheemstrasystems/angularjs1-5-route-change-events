@@ -47,19 +47,19 @@ var myApp = angular
 
         var vm = this;
 
-        $rootScope.$on("$locationChangeStart", function(event, next, current) {
+        $rootScope.$on("$locationChangeStart", function() {
             $log.debug("$locationChangeStart fired");
         });
 
-        $rootScope.$on("$routeChangeStart", function(event, next, current) {
+        $rootScope.$on("$routeChangeStart", function() {
             $log.debug("$rootChangeStart fired");
         });
 
-        $rootScope.$on("$locationChangeSuccess", function(event, next, current) {
+        $rootScope.$on("$locationChangeSuccess", function() {
             $log.debug("$locationChangeSuccess fired");
         });
 
-        $rootScope.$on("$routeChangeSuccess", function(event, next, current) {
+        $rootScope.$on("$routeChangeSuccess", function() {
             $log.debug("$rootChangeSuccess fired");
         });
 

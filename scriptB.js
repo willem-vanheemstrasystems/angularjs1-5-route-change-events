@@ -43,24 +43,36 @@ var myApp = angular
         //       });
         vm.courses = [{ id: 1, name: "Ruby" }, { id: 2, name: "JavaScript" }, { id: 3, name: "Python" }];
     })
-    .controller("studentsCtrl", function($http, $route, $rootScope, $log) {
+    .controller("studentsCtrl", function($http, $route, $scope, $log) {
 
         var vm = this;
 
-        $rootScope.$on("$locationChangeStart", function(event, next, current) {
+        $scope.$on("$locationChangeStart", function(event, next, current) {
             $log.debug("$locationChangeStart fired");
+            $log.debug(event);
+            $log.debug(next);
+            $log.debug(current);
         });
 
-        $rootScope.$on("$routeChangeStart", function(event, next, current) {
+        $scope.$on("$routeChangeStart", function(event, next, current) {
             $log.debug("$rootChangeStart fired");
+            $log.debug(event);
+            $log.debug(next);
+            $log.debug(current);
         });
 
-        $rootScope.$on("$locationChangeSuccess", function(event, next, current) {
+        $scope.$on("$locationChangeSuccess", function(event, next, current) {
             $log.debug("$locationChangeSuccess fired");
+            $log.debug(event);
+            $log.debug(next);
+            $log.debug(current);
         });
 
-        $rootScope.$on("$routeChangeSuccess", function(event, next, current) {
+        $scope.$on("$routeChangeSuccess", function(event, next, current) {
             $log.debug("$rootChangeSuccess fired");
+            $log.debug(event);
+            $log.debug(next);
+            $log.debug(current);
         });
 
         vm.reloadData = function() {
