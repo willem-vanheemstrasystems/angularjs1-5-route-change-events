@@ -45,7 +45,6 @@ See scriptA.js, indexA.html and stylesA.css how to implement this.
 
 ##Logging the event handler parameters to inspect their respective properties, using ```$scope```.
 
-
 ```javascript
 [...]
     .controller("studentsCtrl", function($http, $route, $scope, $log) {
@@ -54,18 +53,42 @@ See scriptA.js, indexA.html and stylesA.css how to implement this.
 
         $scope.$on("$locationChangeStart", function(event, next, current) {
             $log.debug("$locationChangeStart fired");
+            $log.debug("$locationChangeStart - event:");
+            $log.debug(event);
+            $log.debug("$locationChangeStart - next:");
+            $log.debug(next);
+            $log.debug("$locationChangeStart - current:");
+            $log.debug(current);
         });
 
         $scope.$on("$routeChangeStart", function(event, next, current) {
             $log.debug("$rootChangeStart fired");
+            $log.debug("$rootChangeStart - event:");
+            $log.debug(event);
+            $log.debug("$rootChangeStart - next:");
+            $log.debug(next);
+            $log.debug("$rootChangeStart - current:");
+            $log.debug(current);
         });
 
         $scope.$on("$locationChangeSuccess", function(event, next, current) {
             $log.debug("$locationChangeSuccess fired");
+            $log.debug("$locationChangeSuccess - event:");
+            $log.debug(event);
+            $log.debug("$locationChangeSuccess - next:");
+            $log.debug(next);
+            $log.debug("$locationChangeSuccess - current:");
+            $log.debug(current);
         });
 
         $scope.$on("$routeChangeSuccess", function(event, next, current) {
             $log.debug("$rootChangeSuccess fired");
+            $log.debug("$rootChangeSuccess - event:");
+            $log.debug(event);
+            $log.debug("$rootChangeSuccess - next:");
+            $log.debug(next);
+            $log.debug("$rootChangeSuccess - current:");
+            $log.debug(current);
         });
         
         [...]
